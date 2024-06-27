@@ -1,0 +1,60 @@
+import java.util.*;
+class Currency_converter{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Welcome to currency converter");
+        System.out.println("1.USD to Rupee");
+        System.out.println("2.Rupee to USD");
+        System.out.println("3.Euro to Rupee");
+        System.out.println("4.Rupee to Euro");
+        System.out.print("Enter your choice(1 or 2 or 3 or 4):");
+        int choice = sc.nextInt();
+        
+        if(choice == 1){
+            System.out.print("Enter the amount in USD:");
+            double USD= sc.nextDouble();
+            double Rupee =usdToRupee(USD);
+            System.out.println("converted amount in Rupee:"+Rupee);
+        } else if(choice == 2){
+             System.out.print("Enter the amount in Rupee:");
+            double Rupee= sc.nextDouble();
+            double USD =RupeeTousd(Rupee);
+            System.out.println("converted amount in USD"+USD);
+        } else if(choice == 3){
+             System.out.print("Enter the amount in Euro:");
+            double Euro= sc.nextDouble();
+            double Rupee =euroToRupee(Euro);
+            System.out.println("converted amount in Rupee:"+Rupee);
+        } else if(choice == 4){
+             System.out.print("Enter the amount in Rupee:");
+            double Rupee= sc.nextDouble();
+            double Euro=RupeeToeuro(Rupee);
+            System.out.println("converted amount in Euro:"+Euro);
+        } else {
+            System.out.println("Invalid choice");
+        }
+        sc.close();
+    }
+    
+    public static double usdToRupee(double USD){
+        return USD*83.47;
+    }
+     public static double RupeeTousd(double Rupee){
+        return Rupee*83.47;
+     }
+      public static double euroToRupee(double Euro){
+        return Euro*83.47;
+      }
+       public static double RupeeToeuro(double Rupee){
+        return Rupee*83.47;
+       }
+}
+class Main{
+    public static void main(String args[]){
+        Currency_converter con= new Currency_converter();
+        con.usdToRupee(100.0);
+        con.RupeeTousd(100.0);
+        con.euroToRupee(100.0);
+        con.RupeeToeuro(100.0);
+    }
+}
